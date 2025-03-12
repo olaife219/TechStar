@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Example</title>
+    <script src="index.js"></script>
+    <script>
+      let name = "John";
+      console.log(name);
+    </script>
+    <style>
+      p {
+        font-size: 20px;
+        color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+    <p id="text">Hello, World!</p>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="showMessage()">Show Alert</button>
+    <button onclick="changeColor()">Change Background Color</button>
+    <p>Counter: <span id="counter">0</span></p>
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+    <input type="text" name="" id="changer">
+    <input type="text" name="" id="display">
+    <button onclick="replaceString()">Change</button>
+    <button onclick="replaceUpcase()">change case</button>
+    <button onclick="multiplyValue()">multiply</button>
+    <button onclick="addText()">Thanks</button>
+    
+
+
+    <script>
+      function changeText() {
+        var textElement = document.getElementById("text");
+        //Keyword variableName = value;
+        textElement.innerText = "Hello, JavaScript!";
+        const num1 = 10;
+        console.log(num1);
+        
+      }
+      // A button and a paragraph are created - HTML
+      // CSS - The paragraph is styled
+      // JavaScript - When the button is clicked, JavaScript changes the text dynamically
+
+      function showMessage() {
+        alert("Hello, Class!");
+      }
+
+      function changeColor() {
+        document.body.style.backgroundColor = "lightblue";
+        document.body.innerHTML += `<div style="height: 100px; width: 100px; background-color: red;"></div>`;
+      }
+
+      let count = 0;
+      function increase() {
+        count++;
+        document.getElementById("counter").innerText = count;
+      }
+      function decrease() {
+        count--;
+        document.getElementById("counter").innerText = count;
+      }
+    </script>
+  </body>
+</html>
