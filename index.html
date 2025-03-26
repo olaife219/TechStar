@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Example</title>
-    <script src="index.js"></script>
-    <script>
-      let name = "John";
-      console.log(name);
-    </script>
-    <style>
-      p {
-        font-size: 20px;
-        color: red;
-      }
-    </style>
 
-  </head>
-  <body>
-    <p id="text">Hello, World!</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Example</title>
+  <script src="index.js"></script>
+  <script>
+    let name = "John";
+    console.log(name);
+  </script>
+  <style>
+    p {
+      font-size: 20px;
+      color: red;
+    }
+
+    .active {
+      color: white;
+      background-color: blue;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- <p id="text">Hello, World!</p>
     <button onclick="changeText()">Change Text</button>
     <button onclick="showMessage()">Show Alert</button>
     <button onclick="changeColor()">Change Background Color</button>
@@ -30,41 +38,85 @@
     <button onclick="replaceString()">Change</button>
     <button onclick="replaceUpcase()">change case</button>
     <button onclick="multiplyValue()">multiply</button>
-    <button onclick="addText()">Thanks</button>
-    
+    <button onclick="addText()">Thanks</button><br><br> -->
 
 
-    <script>
-      function changeText() {
-        var textElement = document.getElementById("text");
-        //Keyword variableName = value;
-        textElement.innerText = "Hello, JavaScript!";
-        const num1 = 10;
-        console.log(num1);
-        
-      }
-      // A button and a paragraph are created - HTML
-      // CSS - The paragraph is styled
-      // JavaScript - When the button is clicked, JavaScript changes the text dynamically
+  <nav>
+    <ul>
+      <li><a href="#" class="nav-link active">Home</a></li>
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Services</a></li>
+      <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
-      function showMessage() {
-        alert("Hello, Class!");
-      }
 
-      function changeColor() {
-        document.body.style.backgroundColor = "lightblue";
-        document.body.innerHTML += `<div style="height: 100px; width: 100px; background-color: red;"></div>`;
-      }
 
-      let count = 0;
-      function increase() {
-        count++;
-        document.getElementById("counter").innerText = count;
-      }
-      function decrease() {
-        count--;
-        document.getElementById("counter").innerText = count;
-      }
-    </script>
-  </body>
+  <input type="text" name="" id="number1" placeholder="Enter number 1">
+  <input type="text" name="" id="operator" placeholder="Enter operator">
+  <input type="text" name="" id="number2" placeholder="Enter number 2">
+  <button onclick="multiply()">Multiply</button>
+
+  <div id="display"></div>
+
+
+
+  <script>
+    function changeText() {
+      var textElement = document.getElementById("text");
+      //Keyword variableName = value;
+      textElement.innerText = "Hello, JavaScript!";
+      const num1 = 10;
+      console.log(num1);
+
+    }
+    // A button and a paragraph are created - HTML
+    // CSS - The paragraph is styled
+    // JavaScript - When the button is clicked, JavaScript changes the text dynamically
+
+    function showMessage() {
+      alert("Hello, Class!");
+    }
+
+    function changeColor() {
+      document.body.style.backgroundColor = "lightblue";
+      document.body.innerHTML += `<div style="height: 100px; width: 100px; background-color: red;"></div>`;
+    }
+
+    let count = 0;
+    function increase() {
+      count++;
+      document.getElementById("counter").innerText = count;
+    }
+    function decrease() {
+      count--;
+      document.getElementById("counter").innerText = count;
+    }
+
+
+
+    // Select all nav links
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+        // Remove 'active' from all links
+        navLinks.forEach(nav => nav.classList.remove("active"));
+
+        // Add 'active' to the clicked link
+        this.classList.add("active");
+    });
+});
+
+
+document.querySelector("nav").addEventListener("click", function (e) {
+    if (e.target.classList.contains("nav-link")) {
+        document.querySelectorAll(".nav-link").forEach(nav => nav.classList.remove("active"));
+        e.target.classList.add("active");
+    }
+});
+
+  </script>
+</body>
+
 </html>

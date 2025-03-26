@@ -20,10 +20,23 @@ console.log("5" * 2);
 console.log(num2);
 
 let obj1 = {
-    name: 'Tedprime',
-    age: 25,
-    location: 'Abeokuta'
+  name: 'Tedprime',
+  age: 25,
+  location: 'Abeokuta'
 };
+
+let arry1 = ["Apple", "Banana", "orange"];
+
+console.log(arry1[0]);
+console.log(arry1[1]);
+console.log(arry1[2]);
+
+
+console.log(typeof 5);
+
+
+
+
 
 console.log(obj1);
 
@@ -31,7 +44,7 @@ console.log(obj1.name);
 
 
 
-  // Prints 5
+// Prints 5
 
 // This is a single line comment
 
@@ -83,6 +96,129 @@ console.log(9 / 3); // Prints 3
 console.log(11 % 3); // Prints 2
 console.log(12 % 3); // Prints 0
 
+// Assignment operator
+
+let var1 = "apple"
+
+// comparsion operator
+
+// == === && ||
+console.log('5' == 5);
+
+console.log('5' === 5);
+
+console.log(0 && 5);
+
+console.log(null || 5);
+
+// Falsy values
+/*
+1. false
+2. 0, -0
+3. "", '', ``
+4. null
+5. undefined
+6. NaN
+*/
+
+// Truthy values
+/*
+1. true
+2. 1, -1 any number apart from 0
+3. "0", "false", " " nonempty strings
+4. [], {}
+5. function(){}
+6. Infinity
+*/
+
+//Conditional Statement
+
+// If statement
+if (false) {
+  console.log("This won't run");
+
+} else {
+  console.log("This will run");
+}
+
+
+
+
+// If else if else statement
+let gender = "aishat ";
+
+if (gender == "female") {
+  console.log("Welcome ma'am")
+} else if (gender == "male") {
+  console.log("Welcome sir")
+} else {
+  console.log("Welcome")
+}
+
+//Loops
+//for loop
+/*
+keyword(variable; condition; increment/decrement){
+ code to be executed
+}
+*/
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+
+//while loop
+/*
+variable initialization
+keyword(condition){
+  code block
+  increment/decrement
+}
+*/
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+//do while loop
+let j = 0;
+do {
+  console.log(j);
+  j++;
+} while (j < 5);
+
+
+let fruit = 3;
+
+switch (fruit) {
+  case 1:
+    console.log("Monday");
+    break;
+  case "truth":
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  case 4:
+    console.log("Thursday");
+    break;
+  case 5:
+    console.log("Friday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  case 7:
+    console.log("Sunday");
+    break;
+  default:
+    console.log("Invalid day");
+}
+
+
+
 // TASK
 
 // String Concatenation Operators
@@ -94,15 +230,15 @@ console.log('I love to ' + 'code.')
 // Notice in the third example we had to make sure to include a space at the end of
 // the first string. The computer will join the strings exactly,
 // so we needed to make sure to include the space we wanted between the two strings.
-console.log('front ' + 'space'); 
+console.log('front ' + 'space');
 // Prints 'front space'
-console.log('back' + ' space'); 
+console.log('back' + ' space');
 // Prints 'back space'
-console.log('no' + 'space'); 
+console.log('no' + 'space');
 // Prints 'nospace'
-console.log('middle' + ' ' + 'space'); 
+console.log('middle' + ' ' + 'space');
 // Prints 'middle space'
-console.log('One' + ', ' + 'two' + ', ' + 'three!'); 
+console.log('One' + ', ' + 'two' + ', ' + 'three!');
 // Prints 'One, two, three!'
 
 // Properties
@@ -172,7 +308,35 @@ console.log(Firstname.concat('chrisphopher', ' tomi', ' praise', ' aisha', ' ola
 console.log(task.replace('eba', 'amala'));
 
 
+function replaceString() {
+  let str = document.getElementById("changer").value;
+  let n = str.replace("eba", "amala");
+  document.getElementById("display").value = n;
+  return;
+}
 
+
+function replaceUpcase() {
+  let str = document.getElementById("changer").value;
+  let n = str.toUpperCase();
+  document.getElementById("display").value = n;
+  return;
+}
+
+function multiplyValue() {
+  let str = document.getElementById("changer").value;
+  let n = str.length * 2;
+  document.getElementById("display").value = n;
+  return;
+}
+
+function addText() {
+  let str = document.getElementById("changer").value;
+  let n = str.concat(' Thanks for the assignment');
+  document.getElementById("display").value = n;
+  str = ''
+  return;
+}
 // Number Properties
 console.log(number.toString()); // convert number to string '5'
 console.log(number.toFixed(2)); // show 2 decimal places
@@ -183,3 +347,167 @@ console.log(number.valueOf()); // return the original number value
 let display = document.getElementById('display');
 let ans = number * 20;
 console.log(ans);
+
+
+/* 1 step
+function functionName(parameter) {
+  // code of block
+}
+
+// 2 step
+let functionName = function (parameter) {
+  // code block
+}
+
+// 3 step
+let functionName = (parameter) => {
+  // code block
+}
+*/
+
+
+// Function Declaration
+// function greet(name) {
+//   if (name) {
+//     console.log('Hello ' + name);
+//   } else {
+//     console.log('Hello guest');
+//   }
+// }
+
+// greet('Abdulhameed'); // Prints 'Hello'
+
+// Function Expression
+
+let greet = function (name) {
+  if (name) {
+    console.log('Hello ' + name);
+  } else {
+    console.log('Hello guest');
+  }
+}
+
+greet('Abdulhameed'); // Prints 'Hello Abdulhameed'
+
+
+// Arrow Function
+// let greet = (name) => {
+//   if (name) {
+//     console.log('Hello ' + name);
+//   } else {
+//     console.log('Hello guest');
+//   }
+// }
+
+// greet('Abdulhameed'); // Prints 'Hello Abdulhameed'
+
+
+
+function multiply() {
+  let number1 = document.getElementById('number1').value;
+  let operator = document.getElementById('operator').value;
+  let number2 = document.getElementById('number2').value;
+  let result = document.getElementById('display');
+
+  let num1 = Number(number1);
+  let num2 = Number(number2);
+  let output = ""
+  for (let i = 0; i <= num2; i++) {
+    switch (operator) {
+      case '*':
+        output += `${num1} X ${i} = ${num1 * i} <br>`;
+        break;
+      case '+':
+        output += `${num1} + ${i} = ${num1 + i} <br>`;
+        break;
+      case '-':
+        output += `${num1} - ${i} = ${num1 - i} <br>`;
+        break;
+      case '/':
+        output += `${num1} / ${i} = ${num1 / i} <br>`;
+        break;
+      case '%':
+        output += `${num1} % ${i} = ${num1 % i} <br>`;
+        break;
+      case '**':
+        output += `${num1} ** ${i} = ${num1 ** i} <br>`;
+        break;
+      case 'pow':
+        output += `${num1} pow ${i} = ${Math.pow(num1, i)} <br>`;
+        break
+      case 'sqrt':
+        output += `sqrt ${num1} = ${Math.sqrt(num1)} <br>`;
+        break;
+      case 'sin':
+        output += `cos ${num1} = ${Math.cos(num1)} <br>`;
+        break;
+      case 'tan':
+        output += `tan ${num1} = ${Math.tan(num1)} <br>`;
+        break;
+      case 'cos':
+        output += `cos ${num1} = ${Math.cos(num1)} <br>`;
+        break;
+      case 'log':
+        output += `log ${num1} = ${Math.log(num1)} <br>`;
+        break;
+      default:
+        output = "Invalid operator";
+        break;
+    }
+    
+  }
+  result.innerHTML = output;
+}
+
+// Function Expression
+// let greet = function () {
+//   console.log('Hello');
+// }
+
+// greet(); // Prints 'Hello'
+
+// Arrow Function
+// let greet = () => {
+//   console.log('Hello');
+// }
+
+// greet(); // Prints 'Hello'
+
+// DOM Manipulation
+// ? What is the DOM?
+// The Document Object Model (DOM) is a programming interface for web documents.
+// It represents the page so that programs can change the document structure,
+// style, and content. The DOM represents the document as nodes and objects.
+// That way, programming languages can connect to the page.
+// The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
+// '' ? '' : ''
+// Changing Text
+// Selecting Elements
+// getElementById
+let header = document.getElementById('header');
+console.log(header);
+// getElementsByClassName
+let list = document.getElementsByClassName('list');
+console.log(list);
+// getElementsByTagName
+let li = document.getElementsByTagName('li');
+console.log(li);
+// querySelector
+let header1 = document.querySelector('#header');
+console.log(header1);
+let list1 = document.querySelector('.list');
+console.log(list1);
+let li1 = document.querySelector('li');
+console.log(li1);
+// querySelectorAll
+let list2 = document.querySelectorAll('.list');
+console.log(list2);
+let li2 = document.querySelectorAll('li');
+console.log(li2);
+let header2 = document.querySelectorAll('#header');
+console.log(header2);
+
+
+
+
+

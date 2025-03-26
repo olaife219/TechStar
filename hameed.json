@@ -1,0 +1,34 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "Durodola Abdulhameed",
+            "Role": "Developer",
+            "Stack": "Full Stack"
+        },
+        {
+            "id": 2,
+            "name": "Durodola Olamide",
+            "Role": "Developer",
+            "Stack": "Frotend"
+        },
+        {
+            "id": 3,
+            "name": "Durodola Ifeoluwa",
+            "Role": "Developer",
+            "Stack": "Backend"
+        }
+    ],
+
+    "Projects": [
+        {
+            "name": "Acutig Website"
+        },
+        {
+            "name": "Tedprime Revamp"
+        },
+        {
+            "name": "Src Website"
+        }
+    ]
+}

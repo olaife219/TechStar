@@ -4,14 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        /* .exampleImage{
+            width: 80%;
+        }
+
+        .active{
+            border-radius: 50%;
+            height: 30rem;
+            width: 30rem
+        } */
+
+        .parent div{
+            display: none;
+        }
+
+        .parent div.active{
+            display: block;
+        }
+    </style>
+    
 </head>
 <body>
     <!-- The image tag is an example of empty element which means it only has the opening tag and it used to add a image to our webpage and it takes in two attribute which are the "src" which is used to specify the path to your image and the "alt" which is used to show an alternative description incase your image does not show  -->
     
     <!-- Getting image from your working space you specify the path to your image in the source attribute -->
-     <img src="./image/image.svg" alt="Hello image">
+     <!-- <img src="./image/image.svg" alt="Hello image"> -->
 
      <!-- Getting image from the internet you provide the url to your image in the source attribute-->
-     <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80" alt="image">
+     <!-- <img id="myImage" class="exampleImage" src="https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-stone-path-in-forest-free-image.jpg?w=600&quality=80" alt="image">
+
+
+     <button id="changeClass">Change</button> -->
+     <!-- <script>
+
+        let myImage = document.getElementById("myImage");
+        
+        
+        myImage.setAttribute("src", "https://images.unsplash.com/photo-1493375366763-3ed5e0e6d8ec");
+
+
+
+        // myImage.style.height = "100px";
+        // myImage.style.width = "100px";
+
+
+        let changeClass = document.getElementById("changeClass");
+
+        changeClass.addEventListener("click", () => {
+            myImage.classList.toggle("active");
+
+
+            const newDiv = document.createElement("div");
+            newDiv.style.height = "40rem"
+            newDiv.style.width = "40rem"
+            newDiv.style.backgroundColor = "red"
+            newDiv.style.color = "white"
+            newDiv.textContent = "This is a new div";
+            document.body.appendChild(newDiv)
+        })
+
+
+
+        </script> -->
+
+
+
+<nav>
+    <ul>
+        <li id="openHome">Home</li>
+        <li id="openAbout">About</li>
+        <li id="openService">Service</li>
+        <li id="openContact">Contact</li>
+    </ul>
+</nav>
+
+
+<main class="parent">
+    <div class="home active" id="home">
+        <h1>This is the home page</h1>
+        <p>This carries the hero section of the page</p>
+    </div>
+    <div class="about" id="about">
+        <h1>This is the about section</h1>
+        <p>The carries information about the company</p>
+    </div>
+    <div class="service" id="service">
+        <h1>This is the service section</h1>
+        <p>This carries services the company render</p>
+    </div>
+    <div class="contact" id="contact">
+        <h1>This is the contact section</h1>
+        <p>This carries the contact information of the company</p>
+    </div>
+</main>
 </body>
+
+<script>
+
+    let home = document.getElementById("home");
+    let about = document.getElementById("about");
+    let service = document.getElementById("service")
+    let contact = document.getElementById("contact");
+
+
+    let homeNav = document.getElementById("openHome");
+    let aboutNav = document.getElementById("openAbout");
+    let serviceNav = document.getElementById("openService");
+    let contactNav = document.getElementById("openContact");
+
+
+    homeNav.addEventListener('click', () => {
+        home.classList.add('active');
+        about.classList.remove('active');
+        service.classList.remove('active');
+        contact.classList.remove('active');
+    });
+
+    aboutNav.addEventListener('click', () => {
+        home.classList.remove('active');
+        about.classList.add('active');
+        service.classList.remove('active');
+        contact.classList.remove('active');
+    });
+
+    serviceNav.addEventListener('click', () => {
+        home.classList.remove('active');
+        about.classList.remove('active');
+        service.classList.add('active');
+        contact.classList.remove('active')
+    });
+
+    contactNav.addEventListener('click', () => {
+        home.classList.remove('active');
+        about.classList.remove('active');
+        service.classList.remove('active');
+        contact.classList.add('active')
+    });
+
+
+    function greet (name) {
+        name ? console.log(`wellcome ${name}`) : console.log('welcome guest');
+        
+    }
+
+
+    // localStorage.getItem("key")
+    // localStorage.setItem("key", "value")
+    // localStorage.removeItem("key")
+    // localStorage.clear()
+
+    localStorage.setItem("username", "Abdulhameed")
+
+    localStorage.setItem("role", "developer");
+
+    localStorage.setItem("stack", "fullstack");
+
+    let username = localStorage.getItem("username");
+
+    greet(username);
+
+    
+    localStorage.removeItem("username");
+
+    localStorage.clear()
+
+    // setInterval(() => {
+        
+    // }, interval);
+
+    // setTimeout
+
+    // clearInterval
+
+    // clearTimeout
+
+   let exampleTimeout = setTimeout(() => {
+        alert("welcome");
+    }, 3000);
+
+    clearTimeout(exampleTimeout);
+
+let counter = 0
+   let IntervalId = setInterval(() => {
+        counter++
+        console.log(`Count: ${counter}`);
+
+        if(counter == 5){
+            clearInterval(IntervalId);
+        }
+        
+    }, 2000);
+
+</script>
+
 </html>
